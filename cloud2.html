@@ -1,0 +1,270 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hey... Please Smile 😊</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      color: #333;
+      flex-direction: column;
+    }
+
+    .heart {
+      font-size: 50px;
+      animation: heartbeat 1s infinite;
+      color: red;
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      25% { transform: scale(1.2); }
+      50% { transform: scale(1); }
+      75% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .msg {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 12px 25px;
+      font-size: 18px;
+      background: #ff6f91;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #ff4e71;
+    }
+
+    .giggle {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #555;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="heart">💓</div>
+  <div class="msg">
+    Hey, rugged girl sorry edhachum thappu panirndha😔<br><br>
+    Kolandha kitta pesama evlo kashtama iruku theriyuma😔<br><br>
+    Kolandha siricha dhana nalla irukum siri pakalam😅
+  </div>
+
+  <button onclick="saySorry()">Nisha sooooooorrryyyy👉👈</button>
+
+  <div class="giggle" id="giggleLine"></div>
+
+  <script>
+    function saySorry() {
+      const lines = [
+        "Okay, okay... I admit it — I'm nothing without your smile 😭",
+        "Even this website is crying without you... see the background? It's pink tears 😢😂",
+        "Anger is temporary, my jokes are forever (bad, but forever) 😜",
+        "One smile from you and this page becomes heaven 😇",
+        "Still mad? Let me send you a meme... or 73! 🤪"
+      ];
+      const line = lines[Math.floor(Math.random() * lines.length)];
+      document.getElementById("giggleLine").innerText = line;
+    }
+  </script>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>nisha</title>
+  <style>
+    * {box-sizing: border-box; margin: 0; padding: 0;}
+    body {
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .heart {
+      font-size: 50px;
+      color: red;
+      animation: heartbeat 1s infinite;
+    }
+    @keyframes heartbeat {
+      0%, 50%, 100% { transform: scale(1); }
+      25%, 75% { transform: scale(1.2); }
+    }
+    .msg {
+      font-size: 24px;
+      margin-top: 20px;
+      max-width: 600px;
+    }
+    .btns {
+      margin-top: 30px;
+    }
+    button {
+      margin: 10px;
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      color: #fff;
+      background: #ff6f91;
+      transition: background 0.3s;
+    }
+    button:hover { background: #ff4e71; }
+    #result, #reaction {
+      margin-top: 30px;
+      font-size: 20px;
+      min-height: 40px;
+    }
+    #cryingGif, #cryingReactionGif {
+      display: none;
+      margin-top: 15px;
+      border-radius: 12px;
+      max-width: 80%;
+      height: auto;
+    }
+    #questionBox { display: none; flex-direction: column; align-items: center; }
+    #qText { font-size: 24px; margin: 20px 0; min-height: 80px; }
+    #progress { margin-top: 10px; font-size: 18px; }
+  </style>
+</head>
+<body>
+
+  <!-- Opening -->
+  <div id="opener">
+    <div class="heart">💓</div>
+    <img src = "ni.png" class="r1">
+    <div class="msg">
+      Hey rugged sorry na edhachum thappu panirndha😢<br><br>
+      Kolandha kitta pesama evlo kashtama iruku theiryuma💖<br>
+      Nishaaaaaa en sorry ah ethukuviya...
+    </div>
+    <div class="btns">
+      <button onclick="sayYes()">Yes 😊</button>
+      <button onclick="sayNo()">No 😠</button>
+    </div>
+    <div id="result"></div>
+    <img id="cryingGif" src="https://tenor.com/en-GB/view/peach-cat-crying-sad-gif-15230901" alt="Crying Baby" />
+  </div>
+
+  <!-- Questions -->
+  <div id="questionBox">
+    <div class="heart">💞</div>
+    <img src = "ni.png" class="r1">
+    <div id="qText"></div>
+    <div class="btns">
+      <button onclick="answerYes()">Yes</button>
+      <button onclick="answerNo()">No</button>
+    </div>
+    <div id="reaction"></div>
+    <img id="cryingReactionGif" src="" />
+    <div id="progress"></div>
+  </div>
+
+  <script>
+    const questions = [
+      "Manichiduma nisha? 🙏",
+      "en 100th problem en kooda pesuma? 😊",
+      "Theriyama clg pakam vanten sorry nisha ini nee solama varamaten manichidu",
+      "Rugged girl nee en kooda life fula irukanum irupiya😢",
+      "Rugged girl smile panna evlo alaga irukum theriyuma nila kooda pathu possesive agudhu smile 📸",
+      "Enakaga oru song dedicate pandriya  🎵",
+      "Nisha enkira kolandhaiku brain illadhana",
+      "Nisha maari yarum alagum illa aprm avaluku iruka arivum yarukum illa ama dhana?",
+      "1000 problem vandhalum unna marakamaten nisha, en kooda epayum kovam patute achum irupiya?",
+      "Enaku un all the best aprm wish podhum enaku evlo kashtama oru vishiyam irundhalum mudichiruven enaku all the best solluviya😢"
+    ];
+
+    const cryingGifs = [
+      "https://i.pinimg.com/originals/b4/14/42/b414420c2af30a0167098e313b401ec1.gif",
+      "https://i.pinimg.com/originals/d7/f5/87/d7f587da442a54025daf47091fe26ba0.gif",
+      "https://i.pinimg.com/originals/e9/01/ff/e901ff855a3b3c8ff45143b28ee3e99e.gif",
+      "https://i.pinimg.com/originals/99/db/ef/99dbef1b49d0ecf206463c300b0bb16d.gif"
+    ];
+
+    let current = 0;
+
+    function sayYes() {
+      document.getElementById("result").innerText =
+        "Apdina idhuku bhadhil sollu🥹";
+      document.getElementById("cryingGif").style.display = "none";
+      setTimeout(() => {
+        document.getElementById("opener").style.display = "none";
+        document.getElementById("questionBox").style.display = "flex";
+        showQuestion();
+      }, 1500);
+    }
+
+    function sayNo() {
+      document.getElementById("result").innerText =
+        "Rugged girlllll😭";
+      document.getElementById("cryingGif").style.display = "block";
+    }
+
+    function showQuestion() {
+      document.getElementById("qText").innerText = questions[current];
+      document.getElementById("progress").innerText =
+        `Question ${current + 1} of ${questions.length}`;
+      document.getElementById("reaction").innerText = "";
+      document.getElementById("cryingReactionGif").style.display = "none";
+    }
+
+    function answerYes() {
+      document.getElementById("reaction").innerText = "Enaku theriyum rugged girl ama soluvanu😹";
+      document.getElementById("cryingReactionGif").style.display = "none";
+      current++;
+      if (current < questions.length) {
+        setTimeout(showQuestion, 1500);
+      } else {
+        setTimeout(endSequence, 1500);
+      }
+    }
+
+    function answerNo() {
+      document.getElementById("reaction").innerText = "enakena yarum ilaye, Enna patha pavama ila nisha";
+      const gif = cryingGifs[Math.floor(Math.random() * cryingGifs.length)];
+      const img = document.getElementById("cryingReactionGif");
+      img.src = gif;
+      img.style.display = "block";
+    }
+
+    function endSequence() {
+      document.body.innerHTML = `
+        <div class="heart">💖</div>
+        <h1 style="margin-top:20px;">You Finished! 🥰</h1>
+        <p style="font-size:22px;margin-top:10px;">
+          Sonnadhu edhayum marakadha...aprm na aludhuruven😭<br><br>
+          Ippayachum en kitta pesuviya pleeaaaseeeeee😔
+        </p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
